@@ -1,0 +1,26 @@
+{"namespace": "com.lxz.proto",
+ "protocol": "Mail",
+
+ "types": [
+     {"name": "Message", "type": "record",
+      "fields": [
+          {"name": "to",   "type": "string"},
+          {"name": "from", "type": "string"},
+          {"name": "body", "type": "string"},
+          {"name": "status",  "type": {"type": "enum", "name": "MessageStatus", "symbols" : ["NEW", "SUCCESS", "FAIL", "EXCEPTION"]}}
+      ]
+     }
+ ],
+
+ "messages": {
+     "send": {
+         "request": [{"name": "message", "type": "Message"}],
+         "response": "Message"
+     },
+
+     "getMessage": {
+              "request": [{"name": "msgId", "type": "string"}],
+              "response": "Message"
+     }
+ }
+}
