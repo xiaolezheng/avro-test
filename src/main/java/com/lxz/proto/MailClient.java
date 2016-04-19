@@ -24,7 +24,7 @@ public class MailClient {
 
         Stopwatch stopwatch = Stopwatch.createStarted();
 
-        for(int i=1; i<10000000;i++) {
+        for(int i=1; i<21;i++) {
             // fill in the Message record and send it
             Message message = new Message();
             message.setTo("jim@qq.com");
